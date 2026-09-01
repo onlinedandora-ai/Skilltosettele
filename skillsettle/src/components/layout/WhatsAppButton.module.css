@@ -1,0 +1,108 @@
+.whatsappFloat {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: var(--z-modal, 900);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.whatsappFloat:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.iconWrapper {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.whatsappFloat:hover .iconWrapper {
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.6);
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.tooltip {
+  display: inline-block;
+  background: var(--bg-dark, #0d0d1a);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  font-family: var(--font-body, inherit);
+}
+
+.whatsappFloat:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.pulseRing {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.35);
+  animation: pulseAnim 2s infinite ease-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes pulseAnim {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .whatsappFloat {
+    bottom: 20px;
+    right: 20px;
+  }
+  .tooltip {
+    display: none;
+  }
+  .iconWrapper,
+  .pulseRing {
+    width: 48px;
+    height: 48px;
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}

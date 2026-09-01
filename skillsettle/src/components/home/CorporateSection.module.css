@@ -1,0 +1,83 @@
+.section {
+  padding: 40px 0 60px 0;
+  background: transparent;
+}
+
+.contentWrap {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mainTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text-primary, #0f172a);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.leadText,
+.subText {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--text-secondary, #334155);
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkIcon {
+  font-size: 1.15rem;
+}
+
+.checkText {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary, #334155);
+}
+
+.btnRow {
+  margin-top: 12px;
+}
+
+.knowMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent, #009bb9);
+  color: #ffffff;
+  font-family: var(--font-display, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm, 10px);
+  box-shadow: 0 4px 14px rgba(0, 155, 185, 0.3);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.knowMoreBtn:hover {
+  background: var(--color-accent-hover, #00849e);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 155, 185, 0.4);
+}

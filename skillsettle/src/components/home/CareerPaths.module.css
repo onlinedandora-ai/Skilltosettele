@@ -1,0 +1,281 @@
+.section {
+  background: var(--bg-base);
+}
+
+.tabContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-xs);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.tabBtn:hover {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent-border);
+  color: var(--color-accent);
+}
+
+.tabActive {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(26, 26, 46, 0.2);
+}
+
+.countBadge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-muted);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+.tabActive .countBadge {
+  background: var(--color-teal);
+  color: #0d0d1a;
+  border-color: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-slow);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0, 212, 170, 0.4);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.iconWrap {
+  font-size: 2.2rem;
+  width: 54px;
+  height: 54px;
+  background: var(--bg-muted);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-xs);
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.durationBadge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--bg-muted);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+}
+
+.liveCohortPill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #008f73;
+  background: var(--color-teal-light);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+/* Skills Section */
+.skillsSection {
+  margin-bottom: 14px;
+}
+
+.sectionLabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skillChip {
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: var(--bg-muted);
+  color: var(--text-primary);
+  padding: 3px 9px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-color);
+}
+
+/* Roles Section */
+.rolesSection {
+  margin-bottom: 20px;
+}
+
+.rolesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.roleTag {
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: var(--color-teal-light);
+  color: #008f73;
+  padding: 3px 9px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--color-teal-border);
+}
+
+.cardFooter {
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Bottom CTA */
+.bottomCta {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.bottomContent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.starIcon {
+  font-size: 1.8rem;
+  width: 46px;
+  height: 46px;
+  background: var(--color-accent-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bottomContent strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.bottomContent p {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bottomCta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .tabContainer {
+    gap: 6px;
+  }
+  .tabBtn {
+    padding: 7px 14px;
+    font-size: 0.82rem;
+  }
+}

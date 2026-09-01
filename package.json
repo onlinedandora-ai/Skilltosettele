@@ -1,0 +1,13 @@
+{
+  "name": "skillsettle-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix skillsettle run dev",
+    "build": "npm --prefix skillsettle run build",
+    "preview": "npm --prefix skillsettle run preview"
+  },
+  "dependencies": {
+    "next": "^16.3.4"
+  }
+}

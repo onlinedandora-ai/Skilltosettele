@@ -1,0 +1,171 @@
+.section {
+  background: #ffffff;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.card {
+  background: var(--bg-muted);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-slow);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: #ffffff;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.instMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.title {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.expBadge {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.bio {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.skillsSection {
+  margin-bottom: 12px;
+}
+
+.skillsLabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skillTag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #ffffff;
+  color: var(--text-primary);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.coursesSection {
+  margin-bottom: 18px;
+}
+
+.coursesLabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.coursesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.coursePill {
+  font-size: 0.78rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+}
+
+.studentStat {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.studentStat strong {
+  color: var(--text-primary);
+}
+
+.profileLink {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.footerWrap {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
