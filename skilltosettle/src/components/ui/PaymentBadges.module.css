@@ -1,0 +1,182 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.secureLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-muted, #64748b);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.badgeList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.paymentCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm, 8px);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  color: var(--text-primary, #0f172a);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.paymentCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent, #009bb9);
+  box-shadow: 0 4px 12px rgba(0, 155, 185, 0.15);
+}
+
+.brandIcon {
+  display: block;
+}
+
+.cardSubText {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-teal, #00a8cc);
+  background: var(--color-teal-light, rgba(0, 168, 204, 0.12));
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.upiIconsGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.phonePeIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: #5f259f;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.badgeTextBold {
+  font-family: var(--font-display, sans-serif);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-secondary, #334155);
+}
+
+.emiIconBox {
+  color: #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emiTextWrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.emiHighlight {
+  font-family: var(--font-display, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #d97706;
+}
+
+.stripeLogo {
+  color: #635bff;
+}
+
+.cardsPair {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.visaBadge {
+  font-family: sans-serif;
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #1a1f71;
+  font-style: italic;
+  letter-spacing: -0.5px;
+  background: #f8fafc;
+  padding: 1px 4px;
+  border-radius: 3px;
+  border: 1px solid #e2e8f0;
+}
+
+:global([data-theme="dark"]) .visaBadge {
+  color: #38bdf8;
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.mcCircles {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 22px;
+  height: 14px;
+}
+
+.mcRed {
+  position: absolute;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #eb001b;
+  opacity: 0.95;
+}
+
+.mcYellow {
+  position: absolute;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f79e1b;
+  opacity: 0.95;
+}
+
+/* Compact layout */
+.compact .paymentCard {
+  padding: 4px 8px;
+  gap: 6px;
+  font-size: 0.72rem;
+}
+
+/* Grid layout */
+.grid .badgeList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

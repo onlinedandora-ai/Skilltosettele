@@ -1,0 +1,920 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+.modalContent {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-xl, 24px);
+  width: 100%;
+  max-width: 520px;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
+  position: relative;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+:global([data-theme="dark"]) .modalContent {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.modalClose {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-muted, #f1f5f9);
+  border: 1px solid var(--border-color, #e2e8f0);
+  color: var(--text-primary, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.modalClose:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+/* Header */
+.modalHeader {
+  padding: 24px 24px 18px;
+  background: linear-gradient(135deg, rgba(0, 155, 185, 0.08) 0%, rgba(2, 132, 199, 0.12) 100%);
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.modalEyebrowRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.modalCategory {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-accent, #009bb9);
+  background: var(--color-accent-light, rgba(0, 155, 185, 0.1));
+  padding: 3px 8px;
+  border-radius: var(--radius-pill, 9999px);
+}
+
+.modalCohortPill {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #166534;
+  background: #dcfce7;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill, 9999px);
+}
+
+.modalTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary, #0f172a);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.modalPriceSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-card, #ffffff);
+  padding: 10px 14px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+:global([data-theme="dark"]) .modalPriceSummary {
+  background: #0f172a;
+}
+
+.modalPriceLeft {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.modalPriceLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted, #64748b);
+  font-weight: 600;
+}
+
+.modalPriceVal {
+  font-family: var(--font-display, sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0284c7;
+}
+
+.modalPriceOriginal {
+  font-size: 0.88rem;
+  color: var(--text-muted, #64748b);
+  text-decoration: line-through;
+}
+
+.modalDiscountBadge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #166534;
+  background: #dcfce7;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill, 9999px);
+}
+
+/* Body Form */
+.modalBody {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fieldLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  font-family: var(--font-display, sans-serif);
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  background: var(--bg-muted, #f1f5f9);
+  border: 1.5px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 10px);
+  padding: 0 12px;
+  transition: all 0.2s ease;
+}
+
+:global([data-theme="dark"]) .inputWrapper {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--color-accent, #009bb9);
+  background: var(--bg-card, #ffffff);
+  box-shadow: 0 0 0 3px rgba(0, 155, 185, 0.15);
+}
+
+.fieldIcon {
+  color: var(--text-muted, #64748b);
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.modalInput {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 11px 0;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.92rem;
+  color: var(--text-primary, #0f172a);
+  outline: none;
+}
+
+:global([data-theme="dark"]) .modalInput {
+  color: #f8fafc;
+}
+
+/* Razorpay Trigger Button */
+.razorpayPayBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #0284c7 0%, #009bb9 100%);
+  color: #ffffff;
+  font-family: var(--font-display, sans-serif);
+  font-size: 1rem;
+  font-weight: 800;
+  border: none;
+  border-radius: var(--radius-pill, 9999px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0, 155, 185, 0.35);
+  margin-top: 6px;
+}
+
+.razorpayPayBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 155, 185, 0.45);
+}
+
+.razorpayPayBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.razorpayIconSvg {
+  flex-shrink: 0;
+}
+
+.modalPaymentsWrapper {
+  margin-top: 4px;
+}
+
+.secureText {
+  font-size: 0.74rem;
+  color: var(--text-muted, #64748b);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Success Receipt */
+.enrolledSuccess {
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.successIconBadge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.receiptCard {
+  width: 100%;
+  background: var(--bg-muted, #f1f5f9);
+  border: 1px dashed var(--border-color, #cbd5e1);
+  border-radius: var(--radius-lg, 16px);
+  padding: 18px 20px;
+  margin: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+:global([data-theme="dark"]) .receiptCard {
+  background: #0f172a;
+}
+
+.receiptRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.receiptLabel {
+  color: var(--text-muted, #64748b);
+  font-weight: 500;
+}
+
+.receiptVal {
+  color: var(--text-primary, #0f172a);
+  font-weight: 700;
+}
+
+.receiptPaymentId {
+  font-family: var(--font-mono, monospace);
+  color: var(--color-accent, #009bb9);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.modalNote {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #334155);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.whatsappGroupBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 20px;
+  background: #25d366;
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border-radius: var(--radius-pill, 9999px);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.whatsappGroupBtn:hover {
+  background: #1eb954;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Auth / Gate Step */
+.authBanner {
+  background: rgba(0, 155, 185, 0.08);
+  border: 1px solid rgba(0, 155, 185, 0.2);
+  border-radius: var(--radius-md, 12px);
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-primary, #0f172a);
+  line-height: 1.45;
+}
+
+.authTabs {
+  display: flex;
+  background: var(--bg-muted, #f1f5f9);
+  padding: 4px;
+  border-radius: var(--radius-pill, 9999px);
+  gap: 4px;
+  margin-top: 2px;
+}
+
+:global([data-theme="dark"]) .authTabs {
+  background: #0f172a;
+}
+
+.authTabBtn {
+  flex: 1;
+  padding: 9px 12px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill, 9999px);
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #64748b);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.authTabBtnActive {
+  background: var(--bg-card, #ffffff);
+  color: var(--color-accent, #009bb9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+:global([data-theme="dark"]) .authTabBtnActive {
+  background: #1e293b;
+  color: #38bdf8;
+}
+
+.authAlertError {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 8px 12px;
+  border-radius: var(--radius-md, 8px);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+:global([data-theme="dark"]) .authAlertError {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.authSubmitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 20px;
+  background: var(--color-accent, #009bb9);
+  color: #ffffff;
+  font-family: var(--font-display, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 800;
+  border: none;
+  border-radius: var(--radius-pill, 9999px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 155, 185, 0.3);
+  margin-top: 4px;
+}
+
+.authSubmitBtn:hover:not(:disabled) {
+  background: #0087a3;
+  transform: translateY(-1px);
+}
+
+.authSubmitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.authSwitchPrompt {
+  font-size: 0.8rem;
+  color: var(--text-muted, #64748b);
+  text-align: center;
+}
+
+.authSwitchLink {
+  color: var(--color-accent, #009bb9);
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 4px;
+  text-decoration: underline;
+}
+
+.loggedInBadge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 10px 14px;
+  border-radius: var(--radius-md, 12px);
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.loggedInInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loggedInAvatar {
+  font-size: 1.2rem;
+}
+
+.loggedInName {
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  font-size: 0.88rem;
+}
+
+.loggedInEmail {
+  font-size: 0.78rem;
+  color: var(--text-muted, #64748b);
+}
+
+.switchAccountBtn {
+  background: none;
+  border: none;
+  color: #0284c7;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.paymentOptionsBox {
+  background: var(--bg-muted, #f8fafc);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 12px);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+:global([data-theme="dark"]) .paymentOptionsBox {
+  background: #0f172a;
+}
+
+.paymentOptionsTitle {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--text-muted, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.paymentMethodsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.paymentMethodPill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill, 9999px);
+  color: var(--text-primary, #0f172a);
+}
+
+:global([data-theme="dark"]) .paymentMethodPill {
+  background: #1e293b;
+}
+
+/* Receipt & Success Card Styling */
+.enrolledSuccess {
+  padding: 24px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.successIconBadge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+}
+
+.dispatchAlert {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 100%);
+  border: 1.5px solid #a7f3d0;
+  border-radius: var(--radius-md, 12px);
+  padding: 12px 16px;
+  margin: 14px 0 16px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:global([data-theme="dark"]) .dispatchAlert {
+  background: rgba(6, 78, 59, 0.3);
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.dispatchItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: #166534;
+  font-weight: 600;
+}
+
+:global([data-theme="dark"]) .dispatchItem {
+  color: #a7f3d0;
+}
+
+.receiptCard {
+  background: var(--bg-muted, #f8fafc);
+  border: 1.5px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 12px);
+  padding: 16px;
+  width: 100%;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+:global([data-theme="dark"]) .receiptCard {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.receiptRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+:global([data-theme="dark"]) .receiptRow {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+.receiptRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.receiptLabel {
+  color: var(--text-muted, #64748b);
+  font-weight: 600;
+}
+
+.receiptVal {
+  color: var(--text-primary, #0f172a);
+  font-weight: 700;
+  text-align: right;
+}
+
+:global([data-theme="dark"]) .receiptVal {
+  color: #f8fafc;
+}
+
+.receiptPaymentId {
+  font-family: var(--font-mono, monospace);
+  font-weight: 700;
+  color: #0284c7;
+  font-size: 0.82rem;
+}
+
+.actionButtonsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.whatsappReceiptBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 18px;
+  background: #25d366;
+  color: #ffffff;
+  font-family: var(--font-display, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 800;
+  border-radius: var(--radius-pill, 9999px);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+  transition: all 0.2s ease;
+}
+
+.whatsappReceiptBtn:hover {
+  background: #20ba5a;
+  transform: translateY(-1px);
+}
+
+.secondaryActionsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+}
+
+.emailReceiptBtn,
+.printReceiptBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: var(--radius-pill, 9999px);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.emailReceiptBtn {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #0369a1;
+}
+
+:global([data-theme="dark"]) .emailReceiptBtn {
+  background: rgba(3, 105, 161, 0.2);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+}
+
+.emailReceiptBtn:hover {
+  background: #e0f2fe;
+}
+
+.printReceiptBtn {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #cbd5e1);
+  color: var(--text-primary, #0f172a);
+}
+
+:global([data-theme="dark"]) .printReceiptBtn {
+  background: #1e293b;
+  border-color: #475569;
+  color: #f8fafc;
+}
+
+.printReceiptBtn:hover {
+  background: var(--bg-muted, #f1f5f9);
+}
+
+/* Referral Input in Checkout Form */
+.referralInputRow {
+  display: flex;
+  gap: 8px;
+}
+
+.referralInput {
+  flex: 1;
+  background: var(--bg-card, #ffffff);
+  border: 1px dashed var(--border-color, #cbd5e1);
+  border-radius: var(--radius-md, 10px);
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-primary, #0f172a);
+}
+
+:global([data-theme="dark"]) .referralInput {
+  background: #0f172a;
+  border-color: #475569;
+}
+
+.referralApplyBtn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #0284c7;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0 16px;
+  border-radius: var(--radius-md, 10px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:global([data-theme="dark"]) .referralApplyBtn {
+  background: #1e293b;
+  border-color: #475569;
+  color: #38bdf8;
+}
+
+.referralApplyBtn:hover {
+  background: #f0f9ff;
+  border-color: #38bdf8;
+}
+
+.referralAppliedAlert {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: var(--radius-md, 8px);
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  color: #166534;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+:global([data-theme="dark"]) .referralAppliedAlert {
+  background: rgba(22, 101, 52, 0.25);
+  border-color: rgba(74, 222, 128, 0.3);
+  color: #86efac;
+}
+
+/* Amazon Referral Banner in Success Screen */
+.referralSuccessBox {
+  width: 100%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 1.5px solid rgba(255, 153, 0, 0.4);
+  border-radius: var(--radius-md, 12px);
+  padding: 14px 16px;
+  margin-top: 14px;
+  text-align: left;
+}
+
+.referralSuccessTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.referralSuccessBadge {
+  color: #ffb84d;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.referralSuccessReward {
+  background: #ff9900;
+  color: #111827;
+  font-weight: 900;
+  font-size: 0.74rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill, 9999px);
+}
+
+.referralSuccessText {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.referralShareWaBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(255, 153, 0, 0.15);
+  border: 1px solid #ff9900;
+  color: #ffb84d !important;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 9px 14px;
+  border-radius: var(--radius-pill, 9999px);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.referralShareWaBtn:hover {
+  background: #ff9900;
+  color: #111827 !important;
+}
+
+
+@media (max-width: 640px) {
+  .modalContent {
+    max-height: 95vh;
+    border-radius: var(--radius-lg, 18px);
+  }
+  .modalHeader {
+    padding: 18px 16px 14px;
+  }
+  .modalBody {
+    padding: 16px 16px 20px;
+  }
+  .modalTitle {
+    font-size: 1.15rem;
+  }
+  .secondaryActionsRow {
+    grid-template-columns: 1fr;
+  }
+}

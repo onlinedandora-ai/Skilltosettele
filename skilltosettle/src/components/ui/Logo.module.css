@@ -1,0 +1,201 @@
+.logoLink {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.logoLink:hover {
+  transform: translateY(-1px);
+}
+
+.logoContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* STS Circular Logo */
+.stsLogoCircleWrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1.5px solid rgba(0, 155, 185, 0.35);
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stsLogoCircleImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.logoLink:hover .stsLogoCircleWrap {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 155, 185, 0.25);
+}
+
+.sm .stsLogoCircleWrap {
+  width: 32px;
+  height: 32px;
+}
+
+.lg .stsLogoCircleWrap {
+  width: 48px;
+  height: 48px;
+}
+
+.light .stsLogoCircleWrap {
+  background: #ffffff;
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* STS Monogram (Fallback / Legacy) */
+.stsMonogramWrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  background: linear-gradient(135deg, rgba(0, 155, 185, 0.08), rgba(2, 132, 199, 0.12));
+  border: 1.5px solid var(--color-accent-border, rgba(0, 155, 185, 0.3));
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 155, 185, 0.08);
+}
+
+.stsLetters {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  background: linear-gradient(135deg, #0284c7 0%, #009bb9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stsSub {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.42rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-accent, #009bb9);
+  margin-top: 2px;
+  line-height: 1;
+}
+
+/* Brand Text alongside monogram */
+.tagline {
+  display: flex;
+  align-items: baseline;
+  border-left: 1.5px solid var(--border-color, #e2e8f0);
+  padding-left: 10px;
+}
+
+.brandTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary, #0f172a);
+  letter-spacing: -0.03em;
+}
+
+.brandAccent {
+  color: var(--color-accent, #009bb9);
+  font-weight: 800;
+}
+
+.brandDomain {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-teal, #00a8cc);
+  margin-left: 1px;
+}
+
+/* Variants */
+.light .stsMonogramWrap {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.light .stsLetters {
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .stsSub {
+  color: #38bdf8;
+}
+
+.light .tagline {
+  border-left-color: rgba(255, 255, 255, 0.2);
+}
+
+.light .brandTitle {
+  color: #ffffff;
+}
+
+/* Sizes */
+.sm .stsLetters {
+  font-size: 1.05rem;
+}
+.sm .stsSub {
+  font-size: 0.36rem;
+}
+.sm .brandTitle {
+  font-size: 1rem;
+}
+
+.lg .stsLetters {
+  font-size: 1.6rem;
+}
+.lg .stsSub {
+  font-size: 0.5rem;
+}
+.lg .brandTitle {
+  font-size: 1.45rem;
+}
+
+@media (max-width: 480px) {
+  .logoContainer {
+    gap: 6px;
+  }
+  .stsLogoCircleWrap {
+    width: 28px;
+    height: 28px;
+  }
+  .stsMonogramWrap {
+    padding: 2px 6px;
+  }
+  .stsLetters {
+    font-size: 1.05rem;
+  }
+  .stsSub {
+    display: none;
+  }
+  .brandTitle {
+    font-size: 0.95rem;
+  }
+  .brandDomain {
+    display: none;
+  }
+  .tagline {
+    padding-left: 6px;
+  }
+}

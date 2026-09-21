@@ -1,0 +1,1495 @@
+.pageContainer {
+  padding: 24px 0 80px;
+  background: var(--bg-main, #f8fafc);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--text-primary, #0f172a);
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  color: var(--text-secondary, #64748b);
+  font-size: 0.98rem;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* =========================================
+   ADMIN PORTAL TOP TABS BAR
+   ========================================= */
+.adminTabsBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  margin-bottom: 28px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.adminTabBtn {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.adminTabBtn:hover {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.adminTabBtnActive {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.adminTabBtnActivePurple {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+}
+
+.tabBadge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.tabBadgeDark {
+  background: #e2e8f0;
+  color: #334155;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+/* =========================================
+   SALES KPI SUMMARY CARDS
+   ========================================= */
+.salesKpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 1024px) {
+  .salesKpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .salesKpiGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kpiCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px 22px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpiCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.kpiTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.kpiIconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.kpiTrendBadge {
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.trendGreen {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.trendBlue {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.trendPurple {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.kpiLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.kpiValue {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.kpiSubtext {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+/* =========================================
+   SALES ANALYTICS DUAL GRID
+   ========================================= */
+.analyticsDualGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 1024px) {
+  .analyticsDualGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.analyticsCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.cardHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.courseBreakdownList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.courseProgressItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.courseProgressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.courseProgressName {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.courseProgressAmount {
+  font-weight: 800;
+  color: #0284c7;
+}
+
+.progressBarTrack {
+  width: 100%;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0284c7 0%, #00d4aa 100%);
+  transition: width 0.4s ease;
+}
+
+/* =========================================
+   SALES CONTROLS & FILTER TOOLBAR
+   ========================================= */
+.salesToolbarCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.toolbarTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.toolbarTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.toolbarActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.addSaleBtn {
+  background: linear-gradient(135deg, #166534 0%, #15803d 100%);
+  color: #ffffff;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 9px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(22, 101, 52, 0.25);
+  transition: all 0.2s ease;
+}
+
+.addSaleBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(22, 101, 52, 0.35);
+}
+
+.exportCsvBtn {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+  padding: 8px 15px;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.exportCsvBtn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.filterInputsGrid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .filterInputsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .filterInputsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.searchBoxWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 9px 12px 9px 34px;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  font-size: 0.86rem;
+  color: #0f172a;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.filterSelect {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  font-size: 0.86rem;
+  color: #0f172a;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #0284c7;
+}
+
+/* =========================================
+   SALES TRANSACTIONS TABLE & MOBILE FLEX CARDS
+   ========================================= */
+.salesTableCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.desktopTableWrap {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.salesTable {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  text-align: left;
+}
+
+/* =========================================
+   MOBILE FLEXBOX CARDS (100% WIDTH, NO HORIZONTAL SCROLL)
+   ========================================= */
+.mobileCardList {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.mobileSalesCard {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.mCardTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mCardStudentRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.mCardAmountBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mCardCourseBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.mCardCohortMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.mCardPaymentRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.74rem;
+  color: #64748b;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 2px;
+}
+
+.mCardActionsRow {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 2px;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mCardActionsRow .actionReceiptBtn,
+.mCardActionsRow .actionWhatsAppBtn,
+.mCardActionsRow .issueCertBtn {
+  flex: 1;
+  justify-content: center;
+  padding: 8px 4px;
+  font-size: 0.75rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.mobileCertCard {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.mobileStudentCard {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .desktopTableWrap {
+    display: none !important;
+  }
+  .mobileCardList {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .modalGrid2Col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.salesTable th {
+  padding: 11px 14px;
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+  font-weight: 800;
+  color: #475569;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.salesTable td {
+  padding: 13px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #0f172a;
+  vertical-align: middle;
+}
+
+.salesTable tr:hover {
+  background: #fbfdff;
+}
+
+/* Order & Receipt Single-Line Flex Row */
+.orderReceiptRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.orderIdPill {
+  font-family: monospace;
+  font-weight: 800;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1.5px solid #bae6fd;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.orderIdPill:hover {
+  background: #e0f2fe;
+  border-color: #0284c7;
+}
+
+.receiptTag {
+  font-size: 0.76rem;
+  color: #64748b;
+  font-family: monospace;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Student Info Column */
+.studentInfoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.studentNameText {
+  color: #0f172a;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.studentEmailText {
+  font-size: 0.78rem;
+  color: #475569;
+}
+
+.studentPhoneTag {
+  font-size: 0.74rem;
+  color: #166534;
+  font-weight: 700;
+}
+
+/* Course Info Column */
+.courseInfoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 250px;
+}
+
+.courseTitleText {
+  font-size: 0.85rem;
+  color: #0369a1;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.cohortScheduleText {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.sourceTag {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+/* Amount Column */
+.amountCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  white-space: nowrap;
+}
+
+.amountValueText {
+  font-size: 0.96rem;
+  color: #0284c7;
+  font-weight: 900;
+}
+
+.currencyTag {
+  font-size: 0.74rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Payment Info Column */
+.paymentInfoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.paymentIdCode {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: #334155;
+  font-weight: 700;
+}
+
+.paymentMethodDate {
+  font-size: 0.74rem;
+  color: #64748b;
+}
+
+/* Status Badges with Single-Line Horizontal Flex Layout */
+.statusCellWrap {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.statusPaid {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1.5px solid #86efac;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(22, 101, 52, 0.08);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 26px;
+  box-sizing: border-box;
+}
+
+.statusPaid:hover {
+  background: #bbf7d0;
+  transform: translateY(-1px);
+}
+
+.statusRefunded {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1.5px solid #fecaca;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 26px;
+  box-sizing: border-box;
+}
+
+.statusRefunded:hover {
+  background: #fee2e2;
+  transform: translateY(-1px);
+}
+
+.statusProcessing {
+  background: #fffbeb;
+  color: #92400e;
+  border: 1.5px solid #fde68a;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 26px;
+  box-sizing: border-box;
+}
+
+.statusIcon {
+  font-size: 0.85rem;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Actions Row */
+.actionsRow {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.actionReceiptBtn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #0284c7;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.actionReceiptBtn:hover {
+  background: #f0f9ff;
+  border-color: #0284c7;
+}
+
+.actionWhatsAppBtn {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.actionWhatsAppBtn:hover {
+  background: #dcfce7;
+  border-color: #166534;
+}
+
+.issueCertBtn {
+  background: #f5f3ff;
+  border: 1.5px solid #ddd6fe;
+  color: #7c3aed;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 5px 11px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.issueCertBtn:hover {
+  background: #7c3aed;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.25);
+}
+
+/* =========================================
+   EXISTING CERTIFICATE GENERATOR LAYOUT
+   ========================================= */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formCard {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.formCardTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary, #0f172a);
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formGroup {
+  margin-bottom: 14px;
+}
+
+.formLabel {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary, #1e293b);
+  margin-bottom: 5px;
+}
+
+.formInput, .formSelect {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-color, #cbd5e1);
+  background: var(--bg-main, #ffffff);
+  color: var(--text-primary, #0f172a);
+  font-size: 0.88rem;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.formInput:focus, .formSelect:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.idContinuationRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.idContinuationRow .formInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+}
+
+.autoIdBtn {
+  background: #f0f9ff;
+  border: 1.5px solid #0284c7;
+  color: #0284c7;
+  font-weight: 700;
+  font-size: 0.82rem;
+  border-radius: 8px;
+  padding: 0 14px;
+  height: 40px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.autoIdBtn:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.actionBtnsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color, #f1f5f9);
+}
+
+.verifyLinkBtn {
+  background: transparent;
+  color: var(--text-primary, #0f172a);
+  border: 1.5px solid var(--border-color, #cbd5e1);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.verifyLinkBtn:hover {
+  background: var(--bg-muted, #f1f5f9);
+}
+
+.previewCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.certScrollWrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  padding-bottom: 8px;
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saveFeedback {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.historySection {
+  margin-top: 48px;
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+}
+
+.historyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.historyTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary, #0f172a);
+  margin: 0;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.table th {
+  padding: 10px 14px;
+  background: var(--bg-muted, #f8fafc);
+  border-bottom: 2px solid var(--border-color, #e2e8f0);
+  font-weight: 800;
+  color: var(--text-secondary, #475569);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-color, #f1f5f9);
+  color: var(--text-primary, #0f172a);
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.statusVerified {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.actionIconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0284c7;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.actionIconBtn:hover {
+  background: #f0f9ff;
+}
+
+.adminLockWrapper {
+  max-width: 480px;
+  margin: 40px auto;
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.lockIcon {
+  width: 64px;
+  height: 64px;
+  background: #f5f3ff;
+  border: 2px solid #ddd6fe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 16px;
+}
+
+.lockTitle {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary, #0f172a);
+  margin-bottom: 6px;
+}
+
+.lockSubtitle {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #64748b);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modalBox {
+  background: #ffffff;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 520px;
+  padding: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  position: relative;
+  border: 1px solid #e2e8f0;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 14px;
+}
+
+.modalTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.adminTopBtn {
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  color: #7c3aed;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.adminTopBtn:hover {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+.adminLogoutBtn {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #ef4444;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.adminLogoutBtn:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.topNavRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.topActionsGroup {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .desktopTableWrap {
+    display: none !important;
+  }
+  .mobileCardList {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageContainer {
+    padding: 14px 0 96px;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .topNavRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .topActionsGroup {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .adminTopBtn, .adminLogoutBtn {
+    font-size: 0.76rem;
+    padding: 6px 10px;
+  }
+
+  .title {
+    font-size: 1.45rem;
+    line-height: 1.25;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* 2x2 Grid for All 4 Admin Tabs - Visible at Once on Mobile with Zero Scroll */
+  .adminTabsBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 6px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    overflow: visible;
+  }
+
+  .adminTabBtn {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.78rem;
+    padding: 9px 6px;
+    gap: 5px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .salesKpiGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .kpiCard {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .kpiValue {
+    font-size: 1.55rem;
+  }
+
+  .analyticsDualGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .analyticsCard {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .salesToolbarCard {
+    padding: 16px 14px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  .toolbarTopRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .toolbarActions {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .addSaleBtn, .exportCsvBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .filterInputsGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .salesTableCard {
+    padding: 14px 10px;
+    border-radius: 14px;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .formCard {
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+
+  .idContinuationRow {
+    gap: 6px;
+  }
+
+  .idContinuationRow .formInput {
+    font-size: 0.82rem;
+    padding: 8px 10px;
+  }
+
+  .autoIdBtn {
+    padding: 0 10px;
+    font-size: 0.76rem;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  .historySection {
+    padding: 16px 14px;
+    margin-top: 24px;
+    border-radius: 14px;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .modalOverlay {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .modalBox {
+    padding: 20px 16px 24px;
+    border-radius: 20px 20px 14px 14px;
+    max-height: 88vh;
+  }
+}

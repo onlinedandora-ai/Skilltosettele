@@ -1,0 +1,10 @@
+# SkilltoSettle Robots.txt
+User-agent: *
+Allow: /
+
+# Disallow private/internal paths if any
+Disallow: /login
+Disallow: /register
+
+# Sitemap location
+Sitemap: https://skilltosettle.com/sitemap.xml

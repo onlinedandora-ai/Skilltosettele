@@ -1,0 +1,709 @@
+/* Certificate Document - Realistic A4 Landscape Presentation & Print Stylesheet */
+
+.certWrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.certContainer {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #faf8f5 100%);
+  padding: 36px 44px;
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 1.414 / 1; /* Standard ISO A4 Landscape Ratio */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e2e8f0;
+}
+
+/* Double Ornate Border */
+.outerFrame {
+  position: absolute;
+  inset: 16px;
+  border: 2px solid #b48324;
+  pointer-events: none;
+}
+
+.innerFrame {
+  position: absolute;
+  inset: 22px;
+  border: 1px solid #d4af37;
+  pointer-events: none;
+}
+
+/* Corner L-Brackets */
+.cornerTL, .cornerTR, .cornerBL, .cornerBR {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: #854d0e;
+  pointer-events: none;
+}
+
+.cornerTL {
+  top: 26px;
+  left: 26px;
+  border-top: 4px solid #854d0e;
+  border-left: 4px solid #854d0e;
+}
+
+.cornerTR {
+  top: 26px;
+  right: 26px;
+  border-top: 4px solid #854d0e;
+  border-right: 4px solid #854d0e;
+}
+
+.cornerBL {
+  bottom: 26px;
+  left: 26px;
+  border-bottom: 4px solid #854d0e;
+  border-left: 4px solid #854d0e;
+}
+
+.cornerBR {
+  bottom: 26px;
+  right: 26px;
+  border-bottom: 4px solid #854d0e;
+  border-right: 4px solid #854d0e;
+}
+
+/* Watermark Security Seal */
+.watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.watermarkMonogram {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 7.5rem;
+  font-weight: 900;
+  color: #b48324;
+  opacity: 0.04;
+  line-height: 0.9;
+  letter-spacing: 0.08em;
+  user-select: none;
+}
+
+.watermarkText {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.35em;
+  color: #b45309;
+  opacity: 0.035;
+  margin-top: 4px;
+  user-select: none;
+}
+
+/* Header Area */
+.certHeader {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.headerBranding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.stsLogoWrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2px solid #d4af37;
+  padding: 3px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(180, 131, 36, 0.2);
+}
+
+.stsLogoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.brandingText {
+  text-align: left;
+}
+
+.academyTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #0f172a;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.academySub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #b45309;
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
+
+.excellenceTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #0369a1;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+/* Body Content */
+.certBody {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 4px 20px;
+}
+
+.certifyText {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.recipientName {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.75rem;
+  font-style: italic;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 4px 0 10px;
+  letter-spacing: 0.02em;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.4);
+  display: inline-block;
+  padding: 0 24px 4px;
+}
+
+.statementText {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #475569;
+  max-width: 660px;
+  margin: 0 auto 12px;
+}
+
+.courseTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #0284c7;
+  letter-spacing: -0.01em;
+  margin: 4px 0 8px;
+}
+
+.specializationBadge {
+  display: inline-block;
+  background: #f0fdf4;
+  border: 1.5px solid #16a34a;
+  color: #14532d;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 5px 18px;
+  border-radius: 999px;
+  margin-top: 4px;
+  text-align: center;
+  line-height: 1.3;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.specializationBadge span,
+.specializationBadge strong {
+  display: inline !important;
+  color: #14532d !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.specializationBadge strong {
+  margin-left: 6px;
+  font-weight: 800;
+}
+
+/* Signatures & Seal Section */
+.signaturesRow {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 30px;
+  margin-top: 12px;
+}
+
+.signatureCol {
+  text-align: center;
+  min-width: 190px;
+}
+
+.scriptSig {
+  font-family: 'Cormorant Garamond', cursive, serif;
+  font-size: 2.1rem;
+  font-style: italic;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  transform: rotate(-2deg);
+}
+
+.sigLine {
+  width: 130px;
+  height: 1.5px;
+  background: #0284c7;
+  margin: 4px auto 6px auto;
+  border-radius: 1px;
+}
+
+.sigName {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+}
+
+.sigTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+/* 3D Metallic Gold Seal with Ribbons */
+.sealWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.goldSealMedallion {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fef08a 0%, #eab308 45%, #b45309 85%);
+  border: 3px solid #fef9c3;
+  box-shadow: 0 6px 16px rgba(180, 83, 9, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+
+.sealInner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sealStsLogo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 2px;
+  margin-bottom: 2px;
+}
+
+.sealVerifiedText {
+  font-family: 'Cinzel', serif;
+  font-size: 0.64rem;
+  font-weight: 900;
+  color: #451a03;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.sealSubText {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.5rem;
+  font-weight: 800;
+  color: #78350f;
+  letter-spacing: 0.08em;
+  margin-top: 1px;
+}
+
+.ribbonsGroup {
+  position: absolute;
+  top: 56px;
+  display: flex;
+  gap: 4px;
+  z-index: 2;
+}
+
+.ribbonLeft, .ribbonRight {
+  width: 18px;
+  height: 26px;
+  background: linear-gradient(180deg, #b45309 0%, #78350f 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.ribbonLeft {
+  transform: rotate(14deg);
+}
+
+.ribbonRight {
+  transform: rotate(-14deg);
+}
+
+/* Bottom Verification & Metadata Bar */
+.certMetaBar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 18px 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.35);
+  margin-top: 10px;
+}
+
+.credentialTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #0369a1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.issuedDate {
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.qrVerificationBox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.qrScanText {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* MOBILE & TABLET SCREEN RESPONSIVENESS */
+/* MOBILE & TABLET SCREEN RESPONSIVENESS */
+@media screen and (max-width: 768px) {
+  .certWrapper {
+    min-width: 680px;
+    margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+  }
+
+  .certContainer {
+    padding: 24px 30px;
+  }
+}
+
+/* PORTRAIT ORIENTATION SCREEN STYLES */
+.portraitWrapper {
+  max-width: 660px;
+}
+
+.portraitContainer {
+  aspect-ratio: 1 / 1.414; /* Standard ISO A4 Portrait Ratio */
+  padding: 42px 34px;
+}
+
+.portraitContainer .recipientName {
+  font-size: 2.25rem;
+  margin: 6px 0 10px;
+}
+
+.portraitContainer .statementText {
+  max-width: 520px;
+  margin: 0 auto 14px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.portraitContainer .courseTitle {
+  font-size: 1.35rem;
+  margin: 4px 0 8px;
+}
+
+.portraitContainer .signaturesRow {
+  margin-top: 24px;
+  padding: 0 14px;
+}
+
+.portraitContainer .certMetaBar {
+  margin-top: 16px;
+  padding-top: 12px;
+}
+
+.portraitContainer .watermarkMonogram {
+  font-size: 6rem;
+}
+
+.portraitContainer .watermarkText {
+  font-size: 1.7rem;
+  letter-spacing: 0.25em;
+}
+
+/* PRINT & SAVE AS PDF STYLESHEET (Clean A4 Landscape & Portrait) */
+@media print {
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-sizing: border-box !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide navigation, header, footer, action buttons, forms, and other page clutter */
+  :global(nav),
+  :global(header),
+  :global(footer),
+  :global(.no-print),
+  :global(button),
+  :global(input),
+  :global(select),
+  :global(.admin-controls),
+  :global([class*="mobileBottomNav"]),
+  :global([class*="whatsAppBtn"]),
+  :global([class*="previewHeader"]),
+  :global([class*="previewHeaderBar"]),
+  :global([class*="searchHero"]),
+  :global([class*="verificationCard"]),
+  :global([class*="recruiterContactCard"]),
+  :global([class*="mobileSwipeHint"]),
+  :global([class*="historySection"]) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Ensure all layout wrappers don't clip, scroll, or hide the certificate */
+  :global(#root),
+  :global(main),
+  :global(.main-content-wrapper),
+  :global([class*="pageWrapper"]),
+  :global([class*="certPreviewWrap"]),
+  :global([class*="certScrollWrapper"]),
+  :global([class*="previewCol"]),
+  :global([class*="mainGrid"]),
+  :global(.container) {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    max-width: none !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  /* Watermark protection: keep faint gold, NEVER turn pitch black */
+  .watermark {
+    opacity: 0.04 !important;
+  }
+
+  .watermarkMonogram {
+    opacity: 0.04 !important;
+    color: #b48324 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .watermarkText {
+    opacity: 0.035 !important;
+    color: #b45309 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .sigLine {
+    background: #0284c7 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  :global(.printable-cert-root) {
+    display: block !important;
+    visibility: visible !important;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    z-index: 9999 !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  :global(.printable-cert-root) * {
+    visibility: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Landscape by default */
+  .certWrapper {
+    width: 297mm !important;
+    max-width: 297mm !important;
+    height: 210mm !important;
+    max-height: 210mm !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #ffffff !important;
+    box-sizing: border-box !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .certContainer {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 297mm !important;
+    max-height: 210mm !important;
+    border: none !important;
+    box-sizing: border-box !important;
+    padding: 12mm 16mm !important;
+    background: #ffffff !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Portrait print override */
+  .portraitWrapper {
+    width: 210mm !important;
+    max-width: 210mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+  }
+
+  .portraitContainer {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 210mm !important;
+    max-height: 297mm !important;
+    padding: 16mm 14mm !important;
+  }
+
+  .specializationBadge {
+    display: inline-block !important;
+    background: #f0fdf4 !important;
+    border: 1.5px solid #16a34a !important;
+    color: #14532d !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .specializationBadge span,
+  .specializationBadge strong {
+    color: #14532d !important;
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .credentialTag {
+    background: #f0f9ff !important;
+    border: 1px solid #bae6fd !important;
+    color: #0369a1 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

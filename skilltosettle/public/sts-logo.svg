@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="stsMetallic" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="35%" stop-color="#4f46e5"/>
+      <stop offset="70%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6c63ff"/>
+      <stop offset="100%" stop-color="#00d4aa"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- STS Monogram -->
+  <g transform="translate(10, 10)">
+    <!-- Base Letters STS in classic elegant serif display -->
+    <text x="70" y="76" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="78" fill="url(#stsMetallic)" letter-spacing="8" filter="url(#shadow)">
+      STS
+    </text>
+
+    <!-- Overlay Ribbon Banner across middle -->
+    <g transform="translate(0, 42)">
+      <rect x="0" y="0" width="140" height="22" rx="3" fill="#ffffff" stroke="#6c63ff" stroke-width="1.5" filter="url(#shadow)"/>
+      <text x="70" y="15" text-anchor="middle" font-family="'JetBrains Mono', 'Courier New', monospace" font-weight="900" font-size="9" fill="#1a1a2e" letter-spacing="2.5">
+        SKILLTOSETTLE
+      </text>
+    </g>
+  </g>
+
+  <!-- Divider -->
+  <line x1="168" y1="25" x2="168" y2="95" stroke="#e2e5f1" stroke-width="2"/>
+
+  <!-- Brand text right side -->
+  <g transform="translate(185, 0)">
+    <text x="0" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#1a1a2e" letter-spacing="-0.5">
+      Skill<tspan fill="url(#brandGrad)">toSettle</tspan>
+    </text>
+    <text x="0" y="82" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="11" fill="#00d4aa" letter-spacing="1">
+      GLOBAL LEARNING
+    </text>
+  </g>
+</svg>

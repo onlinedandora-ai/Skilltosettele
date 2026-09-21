@@ -8,3 +8,10 @@ build/
 **/build/
 .DS_Store
 *.log
+*.zip
+*.tar.gz
+*.rar
+public_html/upload.zip
+public_html/InfixLMS_Package/
+skilltosettle/extracted/
+*.sql

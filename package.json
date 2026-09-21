@@ -1,13 +1,17 @@
 {
-  "name": "skillsettle-workspace",
+  "name": "skilltosettle-workspace",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "npm --prefix skillsettle run dev",
-    "build": "npm --prefix skillsettle run build",
-    "preview": "npm --prefix skillsettle run preview"
+    "dev": "npm --prefix skilltosettle run dev",
+    "build": "npm --prefix skilltosettle run build",
+    "preview": "npm --prefix skilltosettle run preview",
+    "deploy": "npm run build && npx firebase deploy --only hosting"
   },
   "dependencies": {
-    "next": "^16.3.4"
+    "crypto": "^1.0.1",
+    "dotenv": "^18.0.1",
+    "express": "^5.2.1",
+    "razorpay": "^2.9.8"
   }
 }
