@@ -196,7 +196,7 @@ export default function CertificateGenerator() {
       else if (found.slug.includes("dsa")) codePrefix = "STS-DSA";
       else if (found.slug.includes("devops")) codePrefix = "STS-DEV";
       else if (found.slug.includes("sql")) codePrefix = "STS-SQL";
-      else if (found.slug.includes("ielts")) codePrefix = "STS-ENG";
+      else if (found.slug.includes("ielts") || found.slug.includes("spoken-english")) codePrefix = "STS-ENG";
       setCredentialId(getNextCredentialId(codePrefix));
     }
   };

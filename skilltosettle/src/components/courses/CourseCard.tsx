@@ -74,7 +74,7 @@ export default function CourseCard({ course }: CourseCardProps) {
             <span>{course.duration}</span>
           </span>
           <span className={styles.metaItem}>
-            <span>Capstone Labs</span>
+            <span>{course.metaHighlight ?? "Capstone Labs"}</span>
           </span>
         </div>
 

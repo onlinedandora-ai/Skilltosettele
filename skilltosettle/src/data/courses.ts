@@ -26,6 +26,17 @@ export interface Course {
   image: string;
   badge?: string;
   popular?: boolean;
+  heroHeading?: string;
+  heroBullets?: string[];
+  audience?: { icon: string; title: string; description: string }[];
+  metaHighlight?: string;
+  projectsSectionTitle?: string;
+  projectsSectionSubtitle?: string;
+  projectCardDesc?: string;
+  projectDeliverables?: string[];
+  panelInclusions?: string[];
+  careerSupportTitle?: string;
+  careerSupportSteps?: { icon: string; title: string; description: string }[];
 }
 
 /**
@@ -38,6 +49,7 @@ export interface Course {
  * 6. Machine Learning & Applied AI — Nikhil
  * 7. Business Analyst & Product Strategy — Shyam
  * 8. IELTS 7.5+ Masterclass — Gurpreet
+ * 9. Spoken English — Gurpreet
  */
 export const courses: Course[] = [
   {
@@ -410,7 +422,8 @@ export const courses: Course[] = [
     id: "7",
     slug: "business-analyst",
     title: "Business Analyst & Product Strategy",
-    subtitle: "Bridge the Gap Between Tech and Business: Master Agile, BRD, FRD, JIRA, SQL & Stakeholder Management with Shyam",
+    subtitle:
+      "Become the bridge between tech and business — a 4-week live programme with 3 weeks of mentor-led training in JIRA, Azure DevOps and Microsoft Office, then 1 week of real project work, with 100% placement assistance.",
     category: "Business & Management",
     categorySlug: "business",
     instructor: "Shyam",
@@ -418,52 +431,107 @@ export const courses: Course[] = [
     rating: 4.89,
     reviewCount: 290,
     learners: 1300,
-    duration: "10 Weeks",
-    mode: "Live Interactive Classes",
+    duration: "4 Weeks",
+    mode: "Live Mentor-Led Classes",
     price: 24999,
     originalPrice: 32000,
-    nextBatch: getUpcomingBatchDate(9, true),
+    nextBatch: "Sat, 28 Nov 2026",
     seatsLeft: 8,
     badge: "Career Switch 💼",
     popular: true,
     tags: [
-      "Business Analyst",
-      "Agile",
-      "Scrum",
-      "BRD",
-      "FRD",
       "JIRA",
-      "SQL",
-      "User Stories",
+      "Azure DevOps",
+      "Excel",
+      "Word",
+      "PowerPoint",
+      "Visio",
+    ],
+    metaHighlight: "3 Weeks Training + 1 Week Project",
+    heroBullets: [
+      "Live mentor-led classes — 3 weeks of training + 1 full week of real project work",
+      "Real enterprise projects: BRDs, FRDs, JIRA & Azure DevOps backlogs, and Excel ROI reports",
+      "100% placement assistance — 1-on-1 resume work, scenario mock interviews & portfolio prep",
+      "Verified certificate plus lifetime access to recordings, templates & frameworks",
+    ],
+    audience: [
+      {
+        icon: "🚀",
+        title: "Fresh Graduates",
+        description:
+          "Fresh graduates ready to start a business-facing career with hands-on enterprise documentation and tool proof.",
+      },
+      {
+        icon: "🔄",
+        title: "Career Switchers",
+        description:
+          "Career switchers moving from IT or non-IT roles into Business Analyst and Product Strategy roles.",
+      },
+      {
+        icon: "📈",
+        title: "Working Professionals",
+        description:
+          "Working professionals aiming for BA and product roles who want practical mastery in JIRA, ADO, and Microsoft Office.",
+      },
+    ],
+    projectDeliverables: [
+      "✓ Real Enterprise Deliverable",
+      "✓ Templates & Frameworks",
+      "✓ Live Mentor Review",
+    ],
+    panelInclusions: [
+      "4 weeks live (3 weeks training + 1 week real project)",
+      "Course Completion Certificate Included",
+      "3 enterprise portfolio projects (BRDs, JIRA/ADO, Excel ROI)",
+      "100% placement assistance, 1-on-1 resume & mock interviews",
+      "Lifetime access to recordings, templates & frameworks",
     ],
     outcomes: [
-      "Elicit, analyze, and document comprehensive Business Requirement Documents (BRDs) and FRDs",
-      "Lead Scrum ceremonies, sprint planning, and backlog refinement using JIRA and Confluence",
-      "Model end-to-end business workflows using BPMN 2.0, UML activity diagrams, and use cases",
-      "Conduct data-driven business analysis using SQL and interactive Tableau dashboards",
-      "Manage senior executive stakeholders and communicate complex technical concepts with clarity",
-      "100% Placement Assistance with mock business case interviews and portfolio preparation",
+      "Master the role of a modern BA: SDLC, Agile vs Waterfall, BA vs PM, business cases, and stakeholder mapping",
+      "Run requirement elicitation via interviews & workshops and author BRDs, FRDs, and traceability matrices in Word and Excel",
+      "Facilitate Scrum ceremonies, write user stories & acceptance criteria, and manage sprints and backlogs in JIRA",
+      "Plan and track epics, features, work items, and sprint boards in Azure DevOps (ADO)",
+      "Model process flows in Visio, run gap analysis, and deliver Excel reports & PowerPoint storytelling",
+      "Complete a full week of hands-on enterprise project work with 100% placement assistance, resume work, and scenario mock interviews",
     ],
     projects: [
-      "End-to-End Fintech Banking App BRD, FRD & User Story Specification",
-      "E-Commerce Checkout Revamp: Agile Sprint Backlog & JIRA Management",
-      "Executive Data-Driven Business Case & ROI Analysis Dashboard",
+      "Fintech Banking App — BRD, FRD and user story specification",
+      "E-commerce Checkout Revamp — Agile sprint backlog built in JIRA and ADO",
+      "Executive Business Case — ROI analysis in Excel, presented in PowerPoint",
     ],
     inclusions: [
-      "40 live interactive sessions led by Shyam",
-      "Real-world enterprise case studies and template libraries",
-      "100% Placement Assistance across banking, tech, and consulting firms",
-      "Course Completion Certificate with credential verification",
-      "1-on-1 resume optimization & scenario-based mock interviews",
+      "3 weeks of live mentor-led classes + 1 full week of real project work with Shyam",
+      "Hands-on mastery of JIRA, Azure DevOps (ADO), Excel, Word, PowerPoint & Visio",
+      "3 enterprise portfolio projects: BRDs, JIRA & ADO backlogs, and Excel ROI reports",
+      "100% Placement Assistance with 1-on-1 resume work, scenario mock interviews & portfolio prep",
+      "Verified Course Completion Certificate with credential ID",
       "Lifetime access to session recordings, templates, and frameworks",
     ],
     curriculum: [
-      { module: "Module 1: Role of a Modern Business Analyst", topics: ["SDLC vs STLC Methodologies", "Business Analyst vs Product Manager", "Business Case Development", "Stakeholder Identification & Mapping"] },
-      { module: "Module 2: Requirement Engineering & Elicitation", topics: ["Interviewing & Workshop Techniques", "Drafting BRD (Business Requirements Document)", "Drafting FRD & Functional Specs", "Traceability Matrix (RTM)"] },
-      { module: "Module 3: Agile, Scrum & JIRA in Practice", topics: ["Scrum Framework & Sprint Ceremonies", "Writing High-Quality User Stories", "Acceptance Criteria (INVEST & Gherkin)", "Hands-on JIRA & Confluence Workflows"] },
-      { module: "Module 4: Process Modeling & Wireframing", topics: ["BPMN 2.0 Business Process Notation", "UML Use Case & Activity Diagrams", "Figma / Miro Wireframing Basics", "Gap Analysis & Root Cause Analysis"] },
-      { module: "Module 5: Data Analysis for Business Analysts", topics: ["Essential SQL Queries for BA", "Excel Advanced Functions & VLOOKUP", "Tableau Interactive Reporting", "A/B Testing & KPI Definition"] },
-      { module: "Module 6: Capstone Project & Placement Prep", topics: ["Comprehensive Capstone Case Study", "Product Walk-Through Presentation", "Behavioral & Scenario Mock Interviews", "Placement Network Referrals"] },
+      {
+        module: "W1 · Role of a Modern BA",
+        topics: ["SDLC", "Agile vs Waterfall", "BA vs PM", "Business Cases", "Stakeholder Mapping"],
+      },
+      {
+        module: "W1 · Requirement Elicitation & Documentation",
+        topics: ["Interviews & Workshops", "BRDs & FRDs in Word", "Traceability Matrices in Excel"],
+      },
+      {
+        module: "W2 · Agile, Scrum & JIRA",
+        topics: ["Scrum Ceremonies", "User Stories", "Acceptance Criteria", "Sprints & Backlogs in JIRA"],
+      },
+      {
+        module: "W2 · Azure DevOps (ADO)",
+        topics: ["ADO Boards", "Epics, Features & Work Items", "Sprint Planning & Tracking"],
+      },
+      {
+        module: "W3 · Process Modeling & Reporting",
+        topics: ["Process Flows in Visio", "Gap Analysis", "Excel Reports", "PowerPoint Storytelling"],
+      },
+      {
+        module: "W4 · Project Week & Placement Prep",
+        topics: ["Full Week of Hands-On Project Work", "Resume & Portfolio Prep", "Scenario Mock Interviews"],
+      },
     ],
     image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80",
   },
@@ -523,6 +591,187 @@ export const courses: Course[] = [
       { module: "Module 4: Writing Task 1 (Charts, Graphs & Letters)", topics: ["Data Reporting & Overview Paragraphs", "Formal & Semi-Formal Letter Writing", "Grammatical Range & Cohesion", "Sample Band 9 Responses"] },
       { module: "Module 5: Writing Task 2 (Opinion & Argumentative Essays)", topics: ["Idea Generation & Essay Structuring", "Thesis Statements & Cohesive Devices", "Lexical Resource & Advanced Vocabulary", "1-on-1 Essay Corrections"] },
       { module: "Module 6: Speaking Fluency & Final Simulation", topics: ["Part 1 Familiar Topics & Part 2 Cue Cards", "Part 3 Abstract Discussions", "Pronunciation & Idiomatic Language", "Full Proctored Mock Exam"] },
+    ],
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
+  },
+  {
+    id: "9",
+    slug: "spoken-english",
+    title: "Spoken English",
+    subtitle:
+      "Speak fluent, confident English in everyday conversations, workplace meetings & job interviews — 100% live mentor classes only.",
+    category: "Global Careers",
+    categorySlug: "global",
+    instructor: "Gurpreet",
+    instructorTitle: "Master IELTS Coach & International Language Specialist",
+    rating: 4.94,
+    reviewCount: 215,
+    learners: 1100,
+    duration: "6 Weeks",
+    mode: "Live Mentor Classes Only",
+    price: 5000,
+    originalPrice: 7500,
+    nextBatch: getUpcomingBatchDate(4, false),
+    seatsLeft: 12,
+    badge: "Live Mentor Only 🎙️",
+    popular: true,
+    tags: [
+      "Spoken English",
+      "Fluency",
+      "Pronunciation",
+      "Grammar in Speech",
+      "Interview Speaking",
+      "Public Speaking",
+    ],
+    heroHeading: "Spoken English — 100% Live Mentor Classes Only",
+    metaHighlight: "Live Mentor Classes Only",
+    heroBullets: [
+      "100% Live Mentor Classes Only — no pre-recorded videos, every single class is live interactive speaking practice",
+      "Overcome hesitation & stop translating in your head so you think and speak naturally in English",
+      "Real-time mentor correction on pronunciation, grammar, tone, and sentence structure on every call",
+      "Practical roleplays for daily life, workplace meetings, client calls, presentations, and job interviews",
+    ],
+    audience: [
+      {
+        icon: "🚀",
+        title: "Students & Fresh Graduates",
+        description:
+          "Build clear, fluent spoken English to excel in campus placements, group discussions, and HR interviews.",
+      },
+      {
+        icon: "💼",
+        title: "Working Professionals",
+        description:
+          "Speak confidently in office meetings, standups, client calls, and presentations without hesitation.",
+      },
+      {
+        icon: "🌍",
+        title: "Everyday Learners",
+        description:
+          "Break speaking fear and hold natural, effortless English conversations in daily and social settings.",
+      },
+    ],
+    projectsSectionTitle: "Live Speaking Labs & Practical Assessments",
+    projectsSectionSubtitle:
+      "Every session is a live mentor call — you actively speak through real-life and workplace scenarios with instant feedback.",
+    projectCardDesc:
+      "Practiced live with your mentor and batchmates, with immediate guidance on fluency, clarity, vocabulary, and pronunciation.",
+    projectDeliverables: [
+      "✓ 100% Live Mentor Practice",
+      "✓ Real-Time Correction",
+      "✓ Personal Fluency Scorecard",
+    ],
+    panelInclusions: [
+      "6 weeks of 100% live mentor classes only",
+      "Course Completion Certificate Included",
+      "Small interactive batches — every learner speaks",
+      "Real-time pronunciation & grammar correction",
+      "Daily life, workplace & interview speaking roleplays",
+    ],
+    outcomes: [
+      "Speak English fluently and confidently without pausing to translate from your mother tongue",
+      "Fix everyday grammar, tense, and sentence-framing mistakes naturally while speaking",
+      "Improve pronunciation, voice clarity, pacing, and reduce mother-tongue influence",
+      "Handle job interviews, HR rounds, and confident self-introductions with ease",
+      "Participate actively and clearly in workplace meetings, client calls, and short presentations",
+      "Build practical everyday and professional vocabulary you can use immediately",
+    ],
+    projects: [
+      "Live Conversation & Fluency Lab — Real-life daily & social roleplay scenarios",
+      "Workplace Communication Simulation — Client calls, standups & 5-minute presentation",
+      "1-on-1 Mock Interview & Fluency Evaluation — Personalized mentor scorecard & feedback",
+    ],
+    inclusions: [
+      "100% live mentor classes only with Gurpreet (no pre-recorded video-only modules)",
+      "Small interactive batches so every learner gets active speaking time in every class",
+      "Real-time mentor feedback on pronunciation, grammar, tone, and fluency",
+      "Everyday, workplace, and interview conversation roleplay labs",
+      "Practical vocabulary & conversation prompts for daily practice",
+      "1-on-1 live mock interview & personal fluency scorecard",
+      "Verified Course Completion Certificate",
+    ],
+    careerSupportTitle: "How Our Live Mentor Coaching Works",
+    careerSupportSteps: [
+      {
+        icon: "🎙️",
+        title: "1. Live Speaking Every Class",
+        description:
+          "Every session is a live mentor call built around active speaking—never passive video watching.",
+      },
+      {
+        icon: "🗣️",
+        title: "2. Real-Time Mentor Feedback",
+        description:
+          "Get immediate, supportive correction on grammar, pronunciation, tone, and sentence clarity.",
+      },
+      {
+        icon: "💼",
+        title: "3. Real-World Roleplays",
+        description:
+          "Rehearse HR interviews, office meetings, client calls, and everyday conversations live.",
+      },
+      {
+        icon: "📈",
+        title: "4. Measurable Fluency Growth",
+        description:
+          "Track weekly gains in speaking confidence, speed, and vocabulary with personal scorecards.",
+      },
+    ],
+    curriculum: [
+      {
+        module: "Week 1: Breaking Hesitation & Speaking Foundations",
+        topics: [
+          "Overcoming Fear of Speaking",
+          "Thinking Directly in English",
+          "Confident Self-Introductions",
+          "Core Sentence Framing",
+        ],
+      },
+      {
+        module: "Week 2: Practical Grammar for Natural Speech",
+        topics: [
+          "Tenses Used in Real Conversations",
+          "Fixing Common Spoken Mistakes",
+          "Natural Connectors & Transitions",
+          "Asking & Answering Questions Smoothly",
+        ],
+      },
+      {
+        module: "Week 3: Pronunciation, Clarity & Everyday Vocabulary",
+        topics: [
+          "Pronunciation & Word Stress",
+          "Intonation & Natural Pacing",
+          "Reducing Mother-Tongue Influence",
+          "High-Impact Daily & Office Phrases",
+        ],
+      },
+      {
+        module: "Week 4: Everyday & Social Conversations",
+        topics: [
+          "Small Talk & Storytelling",
+          "Expressing Opinions Politely",
+          "Handling Phone & Video Calls",
+          "Live Group Discussions",
+        ],
+      },
+      {
+        module: "Week 5: Workplace & Professional Speaking",
+        topics: [
+          "Speaking Up in Team Meetings",
+          "Client & Stakeholder Calls",
+          "Delivering Short Presentations",
+          "Clear & Persuasive Communication",
+        ],
+      },
+      {
+        module: "Week 6: Interview Fluency & Live Evaluation",
+        topics: [
+          "Tell Me About Yourself & HR Rounds",
+          "Situational & Behavioral Answers",
+          "1-on-1 Live Mock Interview",
+          "Final Mentor Fluency Scorecard",
+        ],
+      },
     ],
     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
   },

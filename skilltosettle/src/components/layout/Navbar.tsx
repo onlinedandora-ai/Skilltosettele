@@ -209,16 +209,24 @@ export default function Navbar() {
                               <span className={styles.megaIcon} style={{ fontSize: "1.2rem", color: "#0d9488" }}>💼</span>
                               <div>
                                 <div className={styles.megaTitle}>Business Analyst &amp; Strategy</div>
-                                <div className={styles.megaMentorTag}>Mentor: Shyam (Lead BA)</div>
-                                <div className={styles.megaSub}>Agile, BRD/FRD, JIRA, User Stories</div>
+                                <div className={styles.megaMentorTag}>Mentor: Shyam (4 Weeks Live)</div>
+                                <div className={styles.megaSub}>JIRA, Azure DevOps, BRD/FRD, Visio &amp; Office</div>
                               </div>
                             </Link>
-                            <Link to="/courses/ielts-preparation" className={styles.megaItem} style={{ gridColumn: "1 / -1", borderTop: "1px solid var(--border-light, #f1f5f9)", paddingTop: "8px" }}>
+                            <Link to="/courses/ielts-preparation" className={styles.megaItem}>
                               <span className={styles.megaIcon} style={{ fontSize: "1.2rem", color: "#10b981" }}>🌍</span>
                               <div>
                                 <div className={styles.megaTitle}>IELTS 7.5+ Band Masterclass</div>
                                 <div className={styles.megaMentorTag}>Mentor: Gurpreet (Master Coach)</div>
-                                <div className={styles.megaSub}>Speaking Fluency, Writing Task 1 &amp; 2, Global Visa Readiness</div>
+                                <div className={styles.megaSub}>Speaking Fluency, Writing Task 1 &amp; 2, Global Visa</div>
+                              </div>
+                            </Link>
+                            <Link to="/courses/spoken-english" className={styles.megaItem}>
+                              <span className={styles.megaIcon} style={{ fontSize: "1.2rem", color: "#0284c7" }}>🎙️</span>
+                              <div>
+                                <div className={styles.megaTitle}>Spoken English</div>
+                                <div className={styles.megaMentorTag}>Mentor: Gurpreet (Live Mentor Only · ₹5,000)</div>
+                                <div className={styles.megaSub}>Fluency, Pronunciation, Workplace &amp; Interviews</div>
                               </div>
                             </Link>
                           </div>

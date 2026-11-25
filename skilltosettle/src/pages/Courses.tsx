@@ -9,7 +9,7 @@ import styles from "./Courses.module.css";
 export default function Courses() {
   useSEO({
     title: "All Live Cohort Courses",
-    description: "Browse live cohort tech programs in Cyber Security, Data Analytics, DevOps with AI, DSA, SQL, ML, Business Analysis, and IELTS with 100% placement assistance.",
+    description: "Browse live cohort programs in Cyber Security, Data Analytics, DevOps with AI, DSA, SQL, ML, Business Analysis, IELTS, and Spoken English with live mentoring.",
     canonical: "https://skilltosettle.com/courses",
   });
 
@@ -34,7 +34,7 @@ export default function Courses() {
     { id: "data-ai", label: "Data & AI" },
     { id: "software-engineering", label: "Software Engineering" },
     { id: "business", label: "Business Analysis" },
-    { id: "global", label: "Global Careers (IELTS)" },
+    { id: "global", label: "Global Careers (IELTS & Spoken English)" },
   ];
 
   const filteredCourses = courses.filter((c) => {

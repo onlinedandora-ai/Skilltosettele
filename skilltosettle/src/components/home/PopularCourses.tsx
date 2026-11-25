@@ -15,7 +15,7 @@ export default function PopularCourses() {
     { id: "data-ai", label: "Data & AI" },
     { id: "software-engineering", label: "Software Engineering" },
     { id: "business", label: "Business Analysis" },
-    { id: "global", label: "Global Careers (IELTS)" },
+    { id: "global", label: "Global Careers (IELTS & Spoken English)" },
   ];
 
   const filteredCourses =
@@ -100,12 +100,12 @@ export default function PopularCourses() {
         {/* Remaining Courses Announcement Card */}
         <div className={styles.coursePageNotice}>
           <div className={styles.noticeContent}>
-            <span className={styles.noticeBadge}>8+ FULL PROGRAMS AVAILABLE</span>
+            <span className={styles.noticeBadge}>9+ FULL PROGRAMS AVAILABLE</span>
             <h4 className={styles.noticeTitle}>
-              Looking for SQL, Machine Learning, Business Analyst, or IELTS?
+              Looking for SQL, Machine Learning, Business Analyst, IELTS, or Spoken English?
             </h4>
             <p className={styles.noticeText}>
-              All 8 specialized career tracks with <strong>100% Placement Assistance (India &amp; USA)</strong> and live mentoring are available on our dedicated Courses page.
+              All 9 specialized live mentor programs with <strong>100% Placement Assistance (India &amp; USA)</strong> and interactive mentoring are available on our dedicated Courses page.
             </p>
           </div>
           <Link to="/courses" className={styles.noticeBtn}>

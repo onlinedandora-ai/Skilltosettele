@@ -107,7 +107,9 @@ export default function CourseDetail() {
                 <span>LIVE COHORT MASTERCLASS</span>
               </div>
 
-              <h1 className={styles.courseTitle}>Become Job-Ready in {course.title}</h1>
+              <h1 className={styles.courseTitle}>
+                {course.heroHeading ?? `Become Job-Ready in ${course.title}`}
+              </h1>
 
               {/* Hero Certificate Trust Badge */}
               <div className={styles.heroCertBadgeRow}>
@@ -151,27 +153,24 @@ export default function CourseDetail() {
                 <span className={styles.metaDivider}>•</span>
                 <span className={styles.metaPill}>{course.duration}</span>
                 <span className={styles.metaDivider}>•</span>
-                <span className={styles.metaPill}>India &amp; USA Cohorts</span>
+                <span className={styles.metaPill}>{course.metaHighlight ?? "India & USA Cohorts"}</span>
               </div>
 
               {/* Value Stack Quick Bullet Points */}
               <div className={styles.heroBullets}>
-                <div className={styles.bulletItem}>
-                  <span className={styles.bulletCheck}>✓</span>
-                  <span>100% Live Instructor-Led Classes with direct doubt solving</span>
-                </div>
-                <div className={styles.bulletItem}>
-                  <span className={styles.bulletCheck}>✓</span>
-                  <span>Deploy production-grade capstone projects on cloud &amp; GitHub</span>
-                </div>
-                <div className={styles.bulletItem}>
-                  <span className={styles.bulletCheck}>✓</span>
-                  <span><strong>100% Placement Assistance</strong> across hiring partners in India &amp; USA</span>
-                </div>
-                <div className={styles.bulletItem}>
-                  <span className={styles.bulletCheck}>✓</span>
-                  <span>1-on-1 resume review &amp; realistic technical mock interviews</span>
-                </div>
+                {(
+                  course.heroBullets ?? [
+                    "100% Live Instructor-Led Classes with direct doubt solving",
+                    "Deploy production-grade capstone projects on cloud & GitHub",
+                    "100% Placement Assistance across hiring partners in India & USA",
+                    "1-on-1 resume review & realistic technical mock interviews",
+                  ]
+                ).map((bullet, i) => (
+                  <div key={i} className={styles.bulletItem}>
+                    <span className={styles.bulletCheck}>✓</span>
+                    <span>{bullet}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -193,21 +192,33 @@ export default function CourseDetail() {
               <div className={styles.contentBlock}>
                 <h2 className={styles.blockTitle}>Who Is This Program For?</h2>
                 <div className={styles.targetAudienceGrid}>
-                  <div className={styles.audienceCard}>
-                    <span className={styles.audienceIcon}>🚀</span>
-                    <h4>Career Starters</h4>
-                    <p>Students and freshers seeking their first tech job with structured hands-on project proof.</p>
-                  </div>
-                  <div className={styles.audienceCard}>
-                    <span className={styles.audienceIcon}>🔄</span>
-                    <h4>Career Switchers</h4>
-                    <p>Professionals in manual testing, support, or non-tech roles wanting to transition into {course.title}.</p>
-                  </div>
-                  <div className={styles.audienceCard}>
-                    <span className={styles.audienceIcon}>📈</span>
-                    <h4>Working Professionals</h4>
-                    <p>Engineers and analysts looking to master modern workflows and command top-tier promotions.</p>
-                  </div>
+                  {(
+                    course.audience ?? [
+                      {
+                        icon: "🚀",
+                        title: "Career Starters",
+                        description:
+                          "Students and freshers seeking their first tech job with structured hands-on project proof.",
+                      },
+                      {
+                        icon: "🔄",
+                        title: "Career Switchers",
+                        description: `Professionals in manual testing, support, or non-tech roles wanting to transition into ${course.title}.`,
+                      },
+                      {
+                        icon: "📈",
+                        title: "Working Professionals",
+                        description:
+                          "Engineers and analysts looking to master modern workflows and command top-tier promotions.",
+                      },
+                    ]
+                  ).map((item, i) => (
+                    <div key={i} className={styles.audienceCard}>
+                      <span className={styles.audienceIcon}>{item.icon}</span>
+                      <h4>{item.title}</h4>
+                      <p>{item.description}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -241,9 +252,12 @@ export default function CourseDetail() {
 
               {/* SECTION: Production Projects */}
               <div className={styles.contentBlock}>
-                <h2 className={styles.blockTitle}>Production Projects You Will Build</h2>
+                <h2 className={styles.blockTitle}>
+                  {course.projectsSectionTitle ?? "Production Projects You Will Build"}
+                </h2>
                 <p className={styles.blockSub}>
-                  Real business scenarios with live code repositories, architecture diagrams, and mentor reviews.
+                  {course.projectsSectionSubtitle ??
+                    "Real business scenarios with live code repositories, architecture diagrams, and mentor reviews."}
                 </p>
                 <div className={styles.projectsList}>
                   {course.projects.map((proj, i) => (
@@ -251,12 +265,21 @@ export default function CourseDetail() {
                       <div className={styles.projIndex}>PROJECT 0{i + 1}</div>
                       <h3 className={styles.projTitle}>{proj}</h3>
                       <p className={styles.projDesc}>
-                        Architected from scratch, tested with realistic datasets/loads, and documented for your portfolio and interview discussions.
+                        {course.projectCardDesc ??
+                          "Architected from scratch, tested with realistic datasets/loads, and documented for your portfolio and interview discussions."}
                       </p>
                       <div className={styles.projMeta}>
-                        <span className={styles.projDeliverable}>✓ GitHub Repo Ready</span>
-                        <span className={styles.projDeliverable}>✓ Architecture Diagram</span>
-                        <span className={styles.projDeliverable}>✓ Live Mentor Code Review</span>
+                        {(
+                          course.projectDeliverables ?? [
+                            "✓ GitHub Repo Ready",
+                            "✓ Architecture Diagram",
+                            "✓ Live Mentor Code Review",
+                          ]
+                        ).map((deliverable, di) => (
+                          <span key={di} className={styles.projDeliverable}>
+                            {deliverable}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   ))}
@@ -324,12 +347,13 @@ export default function CourseDetail() {
                     <h3 className={styles.instName}>{course.instructor}</h3>
                     <p className={styles.instRole}>{course.instructorTitle}</p>
                     <p className={styles.instBio}>
-                      Senior practitioner with extensive industry experience building and deploying high-scale systems. Dedicated to 1-on-1 student guidance and interview preparation.
+                      {instructorObj?.bio ??
+                        "Senior practitioner with extensive industry experience building and deploying high-scale systems. Dedicated to 1-on-1 student guidance and interview preparation."}
                     </p>
                     <div className={styles.instStats}>
-                      <span>1,500+ Students Mentored</span>
+                      <span>{(instructorObj?.studentsCount ?? course.learners).toLocaleString()}+ Learners</span>
                       <span>•</span>
-                      <span>4.8/5 Instructor Rating</span>
+                      <span>{course.rating}/5 ({course.reviewCount} reviews)</span>
                     </div>
                   </div>
                 </div>
@@ -337,28 +361,43 @@ export default function CourseDetail() {
 
               {/* SECTION: Career Support System */}
               <div className={styles.contentBlock}>
-                <h2 className={styles.blockTitle}>100% Placement Assistance (India &amp; USA)</h2>
+                <h2 className={styles.blockTitle}>
+                  {course.careerSupportTitle ?? "100% Placement Assistance (India & USA)"}
+                </h2>
                 <div className={styles.careerGrid}>
-                  <div className={styles.careerStep}>
-                    <span className={styles.careerIcon}>📄</span>
-                    <h4>1. Resume Transformation</h4>
-                    <p>ATS-optimized positioning tailored for top recruiters across India &amp; USA highlighting your {course.title} capstones.</p>
-                  </div>
-                  <div className={styles.careerStep}>
-                    <span className={styles.careerIcon}>💼</span>
-                    <h4>2. LinkedIn &amp; Global Profile</h4>
-                    <p>Profile overhaul to attract recruiters and inbound technical screening calls in India &amp; USA.</p>
-                  </div>
-                  <div className={styles.careerStep}>
-                    <span className={styles.careerIcon}>🎯</span>
-                    <h4>3. Mock Technical Interviews</h4>
-                    <p>Live 1-on-1 simulation sessions with feedback on system design and problem solving.</p>
-                  </div>
-                  <div className={styles.careerStep}>
-                    <span className={styles.careerIcon}>🤝</span>
-                    <h4>4. 100% Placement Assistance</h4>
-                    <p>Direct placement referrals across our hiring partner and alumni network in India &amp; USA.</p>
-                  </div>
+                  {(
+                    course.careerSupportSteps ?? [
+                      {
+                        icon: "📄",
+                        title: "1. Resume Transformation",
+                        description: `ATS-optimized positioning tailored for top recruiters across India & USA highlighting your ${course.title} capstones.`,
+                      },
+                      {
+                        icon: "💼",
+                        title: "2. LinkedIn & Global Profile",
+                        description:
+                          "Profile overhaul to attract recruiters and inbound technical screening calls in India & USA.",
+                      },
+                      {
+                        icon: "🎯",
+                        title: "3. Mock Technical Interviews",
+                        description:
+                          "Live 1-on-1 simulation sessions with feedback on system design and problem solving.",
+                      },
+                      {
+                        icon: "🤝",
+                        title: "4. 100% Placement Assistance",
+                        description:
+                          "Direct placement referrals across our hiring partner and alumni network in India & USA.",
+                      },
+                    ]
+                  ).map((step, i) => (
+                    <div key={i} className={styles.careerStep}>
+                      <span className={styles.careerIcon}>{step.icon}</span>
+                      <h4>{step.title}</h4>
+                      <p>{step.description}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
 

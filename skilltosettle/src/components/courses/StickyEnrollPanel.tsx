@@ -38,8 +38,10 @@ export default function StickyEnrollPanel({ course }: StickyEnrollPanelProps) {
           </div>
           <span className={styles.taxNote}>
             {currencyInfo.code === "INR"
-              ? "+ applicable GST | No-cost EMI from ₹3,833/mo"
-              : `All taxes included | Flexible payment plans available`}
+              ? course.price >= 10000
+                ? `+ applicable GST | No-cost EMI from ₹${Math.round(course.price / 12).toLocaleString()}/mo`
+                : `+ applicable GST | ${course.mode}`
+              : `All taxes included | ${course.mode}`}
           </span>
 
           {/* Batch Urgency */}
@@ -53,26 +55,37 @@ export default function StickyEnrollPanel({ course }: StickyEnrollPanelProps) {
 
           {/* Inclusions Quick Check */}
           <div className={styles.inclusionsList}>
-            <div className={styles.incItem}>
-              <span className={styles.incCheck}>✓</span>
-              <span>{course.duration} live interactive cohorts</span>
-            </div>
-            <div className={styles.incItem}>
-              <span className={styles.incCheck}>✓</span>
-              <span><strong style={{ color: "#009bb9" }}>🎓 Course Completion Certificate Included</strong></span>
-            </div>
-            <div className={styles.incItem}>
-              <span className={styles.incCheck}>✓</span>
-              <span>3 production portfolio capstone projects</span>
-            </div>
-            <div className={styles.incItem}>
-              <span className={styles.incCheck}>✓</span>
-              <span>1-on-1 resume & realistic mock interview prep</span>
-            </div>
-            <div className={styles.incItem}>
-              <span className={styles.incCheck}>✓</span>
-              <span>Lifetime class recordings & code notes</span>
-            </div>
+            {course.panelInclusions ? (
+              course.panelInclusions.map((item, i) => (
+                <div key={i} className={styles.incItem}>
+                  <span className={styles.incCheck}>✓</span>
+                  <span>{item}</span>
+                </div>
+              ))
+            ) : (
+              <>
+                <div className={styles.incItem}>
+                  <span className={styles.incCheck}>✓</span>
+                  <span>{course.duration} live interactive cohorts</span>
+                </div>
+                <div className={styles.incItem}>
+                  <span className={styles.incCheck}>✓</span>
+                  <span><strong style={{ color: "#009bb9" }}>🎓 Course Completion Certificate Included</strong></span>
+                </div>
+                <div className={styles.incItem}>
+                  <span className={styles.incCheck}>✓</span>
+                  <span>3 production portfolio capstone projects</span>
+                </div>
+                <div className={styles.incItem}>
+                  <span className={styles.incCheck}>✓</span>
+                  <span>1-on-1 resume &amp; realistic mock interview prep</span>
+                </div>
+                <div className={styles.incItem}>
+                  <span className={styles.incCheck}>✓</span>
+                  <span>Lifetime class recordings &amp; code notes</span>
+                </div>
+              </>
+            )}
           </div>
 
           {/* CTAs */}
